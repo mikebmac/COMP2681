@@ -1,0 +1,47 @@
+/*
+   New Perspectives on HTML and CSS
+   Tutorial 8
+   Review Assignment
+
+   Special Effects style sheet
+   Author: Michael MacKay
+   Date:   June 2, 2019  
+
+   Filename:         dfeffects.css
+   Supporting Files: paper.png
+
+*/
+#familyLinks {
+   -moz-box-shadow: inset rgba(0, 0, 0, 0.6) -10px 0px 15px;
+   -webkit-box-shadow: inset rgba(0, 0, 0, 0.6) -10px 0px 15px;
+   box-shadow: inset rgba(0, 0, 0, 0.6) -10px 0px 15px;
+}
+#familyLinks img {
+   -moz-box-shadow: rgba(0, 0, 0, 0.6) 10px 10px 15px;
+   -webkit-box-shadow: rgba(0, 0, 0, 0.6) 10px 10px 15px;
+   box-shadow: rgba(0, 0, 0, 0.6) 10px 10px 15px;
+}
+#familyLinks img:hover {
+   -o-transform: rotate(-5deg);
+   -moz-transform: rotate(-5deg);
+   -webkit-transform: rotate(-5deg);
+   -ms-transform: rotate(-5deg);
+   transform: rotate(-5deg);
+   opacity: 1.0;
+}
+article {
+   /* On page 568 it states that 90deg was UP, but I found that was 0deg - adjusted based on Chrome 74 (Windows 10) */
+   background: -o-linear-gradient(90deg, rgb(151, 151, 151), rgb(231, 231, 231));
+   background: -moz-linear-gradient(90deg, rgb(151, 151, 151), rgb(231, 231, 231));
+   background: -webkit-linear-gradient(90deg, rgb(151, 151, 151), rgb(231, 231, 231));
+   background: -ms-linear-gradient(90deg, rgb(151, 151, 151), rgb(231, 231, 231));
+   background: linear-gradient(90deg, rgb(151, 151, 151), rgb(231, 231, 231));
+}
+article h1 {
+   text-shadow:   1px 1px 0px rgb(0, 0, 0), 5px 5px 10px rgba(30, 57, 0, 0.8);
+}
+img#family {
+   border: 10px solid;
+   border-image: url("paper.png") 70 repeat;
+}
+

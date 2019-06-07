@@ -1,0 +1,40 @@
+/* Biryani */
+@font-face {
+    font-family: 'Header';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src:    local('Marrada'), 
+            local('Marrada'), 
+            url("./fonts/Marrada/Marrada.ttf") format('truetype');
+}
+/* Sarpanch */
+@font-face {
+    font-family: 'Header-Accent';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src:    local('Sarpanch Bold'), 
+            local('Sarpanch-Bold'), 
+            url("./fonts/Sarpanch/Sarpanch-Regular.ttf") format('truetype');
+}
+/* Yantramanav */
+@font-face {
+    font-family: 'Base';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src:    local('Yantramanav Regular'), 
+            local('Yantramanav-Regular'), 
+            url("./fonts/Yantramanav/Yantramanav-Regular.ttf") format('truetype');
+}
+/* Yantramanav Bold */
+@font-face {
+    font-family: 'Base-Accent';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src:    local('Yantramanav Bold'), 
+            local('Yantramanav-Bold'), 
+            url("./fonts/Yantramanav/Yantramanav-Bold.ttf") format('truetype');
+}

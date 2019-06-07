@@ -1,0 +1,480 @@
+/* 
+    COMP 2681
+    Prarie Land Battlebots
+    main.css | 1.00
+    Michael MacKay
+    May 27th, 2019
+
+    Colour Palette:             Accent: rgb(240,231,0)
+                     Background (Dark): rgb(55,53,52)
+                    Background (Light): #5A5560
+*/
+
+/* ==========================================================================
+   Base Styles for Cross-Browser Styling
+   Credit:  HTML5 Boilerplate v7.1.0 
+   Lisence: MIT License
+   URL:     https://html5boilerplate.com/
+   ========================================================================== */
+html {
+    color: #222;
+    font-size: 10px; /* Force Size for Scaling */
+    line-height: 1.4;
+}
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+    vertical-align: middle;
+}
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+textarea {
+    resize: vertical;
+}
+header,
+nav,
+section,
+footer {
+  display: block;
+  margin: 0;
+}
+/* ==========================================================================
+   # Body
+   ========================================================================== */
+html,
+body {
+  height: 100%;
+  font-family: Base, sans-serif;
+}
+body {
+  overflow: hidden;
+}
+body.loaded,
+.no-js body {
+  overflow: auto;
+}
+a {
+  font-family: Base-Accent;
+  color: rgb(240, 231, 0);
+  text-decoration: none;
+}
+/* ==========================================================================
+   Loading Dialog
+   ========================================================================== */
+dialog#loader {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    border-width: 0;
+}
+#gear-container {
+    position: absolute;
+    display: block;
+    top: 50%;
+    left: 50%;
+    width: 50%;
+    height: 50%;
+    max-width: 500px;
+    max-height: 500px;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    border-width: 0;
+    padding: 0;
+}
+#gear-svg {
+  -webkit-animation: rotator 3s linear infinite;
+          animation: rotator 3s linear infinite;
+}
+#loader.close {
+  -webkit-animation: puff-out 0.25s linear 1 both;
+          animation: puff-out 0.25s linear 1 both;
+}
+.no-js #loader {
+  display: none;
+}
+/* ==========================================================================
+   # Header
+   ========================================================================== */
+body.loaded header,
+.no-js header {
+  -webkit-animation: 0.25s fade-in linear 1 both;
+          animation: 0.25s fade-in linear 1 both;
+  opacity: 1;
+}
+header {
+  width: 100%;
+  background: rgb(55,53,52);
+  opacity: 0;
+}
+header a {
+  border: 3px solid rgb(240, 231, 0);
+  padding: 0 2rem;
+}
+header .header-video {
+  height: 620px;
+}
+header .header-goal {
+  display: flex;
+  direction: row;
+}
+.header-goal_logo {
+  padding: 4rem 6rem;
+  cursor: default;
+}
+.header-goal h1 {
+  font-family: Header;
+  font-size: 10rem;
+  color: rgb(240,231,0);
+  line-height: 1;
+  white-space: nowrap;
+  margin: 0;
+}
+.header-goal span.subtitle {
+  display: block;
+  font-family: Header-Accent;
+  font-size: 2.5rem;
+  color: rgb(255, 255, 255);
+  text-align: center;
+  margin-top: -1.5rem;
+}
+.header-goal_motto {
+  vertical-align: middle;
+}
+.header-goal summary {
+  font-size: 2.5rem;
+  color: rgb(255, 255, 255);
+  margin: auto;
+  padding: 0 8rem;
+  cursor: default;
+}
+.header-goal span.accent {
+  font-family: Base-Accent;
+  text-transform: uppercase;
+  color: rgb(240, 231, 0);
+  letter-spacing: 0.25rem;
+  padding: 0 0.5rem;
+}
+/* ==========================================================================
+   # Nav
+   ========================================================================== */
+body.loaded nav,
+.no-js nav {
+  opacity: 1;
+}
+nav {
+  position: static;
+  width: 100%;
+  height: 100px;
+  background: rgb(255, 255, 255);
+  opacity: 0;
+  -webkit-transition: height 0.25s, background-color 0.25s;
+  transition: height 0.25s, background-color 0.25s;
+}
+nav ul {
+  display: flex;
+  direction: row;
+  justify-content: space-around;
+  height: 100%;
+  margin: 0;
+  list-style: none;
+}
+nav li {
+  display: block;
+  width: 20%;
+  height: 80%;
+  font-family: Base-Accent;
+  font-size: 2.5rem;
+  margin: auto;
+}
+nav li.nav-goal_logo {
+  display: none;
+}
+nav li a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  color: rgb(55, 53, 52);
+  text-decoration: none;
+  background: rgb(250,249,248);
+  border-bottom: 1rem solid transparent;
+}
+nav li a:hover {
+  color: rgb(240,231,0);
+  background: rgb(55, 53, 52);
+  border-bottom: 1rem solid rgb(240,231,0);
+}
+nav.sticky {
+  position: fixed;
+  top: 0;
+  height: 80px;
+  background: rgba(55, 53, 52, 0.95);
+  -webkit-transition: height 0.25s, background-color 0.25s;
+  transition: height 0.25s, background-color 0.25s;
+}
+nav.sticky li a {
+  display: flex;
+  color: rgb(240,231,0);
+  background: transparent;
+  border: none;
+  -webkit-transition: height 0.25s, background-color 0.25s, color 0.1s;
+  transition: height 0.25s, background-color 0.25s, color 0.1s;
+}
+nav.sticky li a:hover {
+  color: rgb(255, 255, 255);
+  text-decoration: underline;
+  -webkit-transition: color 0.5s;
+  transition: color 0.5s;
+}
+nav.sticky li {
+  width: 17%;
+}
+nav.sticky li.nav-goal_logo {
+  display: block;
+  text-align: center;
+}
+.nav-goal_logo h1 {
+  font-family: Header;
+  font-size: 5rem;
+  color: rgb(240,231,0);
+  line-height: 1;
+  white-space: nowrap;
+  margin: 0;
+}
+.nav-goal_logo span {
+  display: block;
+  font-family: Header-Accent;
+  font-size: 1.5rem;
+  color: rgb(255, 255, 255);
+  margin-top: -0.75rem;
+}
+/* ==========================================================================
+   # Section
+   ========================================================================== */
+body.loaded section,
+.no-js section {
+  opacity: 1;
+}
+.landing-articles article {
+  height: 100vh;
+}
+
+/* ==========================================================================
+   # Footer
+   ========================================================================== */
+body.loaded footer,
+.no-js footer {
+  opacity: 1;
+}
+footer {
+  width: 100%;
+  height: 100px;
+  background: rgb(255, 155, 255);
+  opacity: 0;
+}
+/* ==========================================================================
+   # Universal Interactives
+   ========================================================================== */
+.swipe-left {
+  position: relative;
+  display: inline-block;
+}
+.swipe-left::after {
+  position: absolute;
+  content: ' ';
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: #5A5560;
+  transform-origin: left;
+  transition: width 0.25s ease;
+  z-index: -1;
+}
+.swipe-left:hover::after {
+  width: 100%;
+}
+.swipe-up {
+  position: relative;
+  display: inline-block;
+}
+.swipe-up::after {
+  position: absolute;
+  content: ' ';
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  background: #5A5560;
+  transform-origin: bottom;
+  transition: height 0.25s ease;
+  z-index: -1;
+}
+.swipe-up:hover::after {
+  height: 100%;
+}
+/* ==========================================================================
+   # CSS Animations
+   ========================================================================== */
+@-webkit-keyframes rotator {
+  0% {
+      -webkit-transform: rotate(0deg);
+              transform: rotate(0deg);
+  }
+  100% {
+      -webkit-transform: rotate(360deg);
+              transform: rotate(360deg);
+  }
+}
+@keyframes rotator {
+  0% {
+      -webkit-transform: rotate(0deg);
+              transform: rotate(0deg);
+  }
+  100% {
+      -webkit-transform: rotate(360deg);
+              transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes slide-in-right {
+  0% {
+    -webkit-transform: translateZ(700px) translateY(300px) translateX(-400px);
+            transform: translateZ(700px) translateY(300px) translateX(-400px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateZ(0) translateY(0) translateX(0);
+            transform: translateZ(0) translateY(0) translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes slide-in-right {
+  0% {
+    -webkit-transform: translateZ(700px) translateY(300px) translateX(-400px);
+            transform: translateZ(700px) translateY(300px) translateX(-400px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateZ(0) translateY(0) translateX(0);
+            transform: translateZ(0) translateY(0) translateX(0);
+    opacity: 1;
+  }
+}
+@-webkit-keyframes puff-out {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    -webkit-filter: blur(0px);
+            filter: blur(0px);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(2);
+            transform: scale(2);
+    -webkit-filter: blur(2px);
+            filter: blur(2px);
+    opacity: 0;
+  }
+}
+@keyframes puff-out {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    -webkit-filter: blur(0px);
+            filter: blur(0px);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(2);
+            transform: scale(2);
+    -webkit-filter: blur(2px);
+            filter: blur(2px);
+    opacity: 0;
+  }
+}
+@-webkit-keyframes fade-in {
+  0% {
+    -webkit-filter: blur(10px);
+            filter: blur(10px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-filter: blur(0px);
+            filter: blur(0px);
+    opacity: 1;
+  }
+}
+@keyframes fade-in {
+  0% {
+    -webkit-filter: blur(10px);
+            filter: blur(10px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-filter: blur(0px);
+            filter: blur(0px);
+    opacity: 1;
+  }
+}
+/* ==========================================================================
+   Media Queries
+   ========================================================================== */
+
+@media only screen and (min-width: 35em) {
+    /* Style adjustments for viewports that meet the condition */
+}
+
+
+ /* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+/*
+ * Hide visually and from screen readers
+ */
+
+.hidden {
+  display: none !important;
+}
+/*
+* Clearfix: contain floats
+*
+* For modern browsers
+* 1. The space content is one way to avoid an Opera bug when the
+*    `contenteditable` attribute is included anywhere else in the document.
+*    Otherwise it causes space to appear at the top and bottom of elements
+*    that receive the `clearfix` class.
+* 2. The use of `table` rather than `block` is only necessary if using
+*    `:before` to contain the top-margins of child elements.
+*/
+.clearfix:before,
+.clearfix:after {
+  content: " "; /* 1 */
+  display: table; /* 2 */
+}
+.clearfix:after {
+  clear: both;
+}

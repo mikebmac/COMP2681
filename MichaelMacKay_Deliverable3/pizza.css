@@ -1,0 +1,116 @@
+/*
+   New Perspectives on HTML and CSS
+   Tutorial 6
+   Review Assignment
+
+   Pizza Order Style Sheet
+   Author: Michael MacKay
+   Date:   June 2, 2019
+
+   Filename:         pizza.css
+   Supporting Files: delivery.png, okay.png, warning.png
+
+*/
+fieldset {
+   background: rgb(255, 246, 205);
+   border: 1px solid rgb(233, 69, 0);
+   float: left;
+   margin: 1%;
+}
+fieldset#custInfo {
+   width: 35%;
+}
+fieldset#buildPizza {
+   width: 60%;
+}
+fieldset#meat,
+fieldset#vegetables {
+   width: 47%;
+   background: rgb(237, 178, 74);
+}
+fieldset legend {
+   font-size: 0.9em;
+}
+/* Prefer not to use a manual clearfix, ending up being the easiest way for this project */
+.clearfix {
+   content: "";
+   clear: both;
+   display: block;
+}
+label {
+   display: block;
+   font-size: 0.8em;
+   float: left; 
+   width: 40%;
+   margin: 5px 0px;
+   padding-left: 5px;
+}
+label span{
+   display: block;
+}
+input,
+textarea {
+   display: block;
+   float: left;
+   width: 50%;
+   margin: 5px 0px;
+}
+textarea {
+   height: 100px;
+}
+form img {
+   display: block;
+   float: left;
+   margin: 5px 0px;
+}
+input#delTime {
+   width: 150px;
+}
+img#sizeimage {
+   margin-left: 40%;
+}
+input[type="range"]#size {
+   width: 200px;
+   background: transparent;
+}
+select#crust {
+   float: left;
+   font-size: 0.8em;
+   margin: 5px 0px;
+   width: 150px;
+}
+input[type="number"]#quantity {
+   width: 40px;
+}
+fieldset.optionGroup {
+   width: 50%;
+   border: none;
+   background: transparent;
+}
+input[type="radio"] {
+   width: 30px;
+}
+input[type="checkbox"] {
+   width: 20px;
+}
+input[type="submit"] {
+   width: 150px;
+   float: none;
+   margin: 0 auto;
+}
+input:focus,
+select:focus,
+textarea:focus {
+   background: rgb(220, 255, 200);
+}
+input:valid:focus {
+   background: url("okay.png") bottom right no-repeat , rgb(220, 255, 200);
+}
+input:invalid:focus {
+   background: url("warning.png") bottom right no-repeat, rgb(255, 232, 233);
+}
+/* Remove the check image for the quantity spinner and submit button for better UX */
+input#quantity,
+input#submit {
+   background-image: none;
+}
