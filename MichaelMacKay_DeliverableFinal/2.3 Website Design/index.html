@@ -4,14 +4,17 @@
 <head>
   <meta charset="utf-8">
   <title>Prairie Land Battlebots</title>
-  <meta name="description" content="">
+  <meta name="description" content="Based out of J.C. Charyk School in Hanna, AB - we are a STEM project-based-learning program with the goal of encouraging students by teaching DESIGN, developing RESILIENCY, and modeling LIFE-LONG LEARNING.">
+  <meta name="keywords" content="Robotics,Battlebots,Fighting Bots,Project Based Learning, J.C. Charyk">
+  <meta name="author" content="Michael MacKay">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <link rel="apple-touch-icon" href="icon.png">
 
-  <link rel="stylesheet" href="css/font.css">
-  <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" type="text/css" href="css/font.css">
+  <link rel="stylesheet" type="text/css" href="css/normalize.css">
+  <link rel="stylesheet" type="text/css" href="css/dialog-polyfill.css" />
+  <link rel="stylesheet" type="text/css" href="css/main.css">
 
   <meta name="theme-color" content="#fafafa">
 </head>
@@ -34,21 +37,26 @@
   <!-- Header -->
   <header id="landing-header">
     <section class="header-video">
-        <iframe width="100%" height="620" src="https://www.youtube.com/embed/Q9yn1DpZkHQ?controls=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <h1>Prairie Land<span>Battlebots</span></h1>
+        <video id="landing-video" autoplay muted loop>
+          <source src="landing-video.mp4" type="video/mp4">
+          <source src="landing-video.ogg" type="video/ogg">
+        </video>
     </section>
 
     <section class="header-goal">
-      <div class="header-goal_logo">
-          <h1>PRAIRIE LAND<span class="subtitle">BATTLEBOTS</span></h1>
-      </div>
-      <summary>Based out of <a href="https://jcc.plrd.ab.ca/" target="_blank" class="swipe-up">J.C. Charyk School</a> in Hanna, AB - we are a <span class="accent swipe-left">STEM</span> project-based-learning program with the goal of encouraging students by teaching <span class="accent swipe-left">DESIGN</span>, developing <span class="accent swipe-left">RESILIENCY</span>, and modeling <span class="accent swipe-left">LIFE-LONG LEARNING</span>.</summary>
+      <h2 class="header-goal_logo">
+          OUR<span class="subtitle">MISSION</span>
+      </h2>
+      <aside>Based out of <a href="https://jcc.plrd.ab.ca/" target="_blank" class="swipe-up">J.C. Charyk School</a> in Hanna, AB - we are a <span class="accent swipe-left">STEM</span> project-based-learning program with the goal of encouraging students by teaching <span class="accent swipe-left">DESIGN</span>, developing <span class="accent swipe-left">RESILIENCY</span>, and modeling <span class="accent swipe-left">LIFE-LONG LEARNING</span>.
+      </aside>
     </section>
   </header>
 
   <!-- Nav -->
   <nav class="navigation" id="landing-nav">
     <ul>
-      <li class="nav-goal_logo"><h1>PRAIRIE LAND<span>BATTLEBOTS</span></h1></li>
+      <li class="nav-goal_logo"><h2>PRAIRIE LAND<span>BATTLEBOTS</span></h2></li>
       <li><a href="learning.html"><span>LEARNING</span></a></li>
       <li><a href="#"><span>EVENTS</span></a></li>
       <li><a href="#"><span>BOTTERS</span></a></li>
@@ -58,20 +66,59 @@
 
   <!-- Section -->
   <section class="landing-articles">
-    <article>
-      <img src="" alt="Using Fusion 360" />
-      <h1>Using Fusion 360</h1>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Turpis cursus in hac habitasse platea dictumst quisque. Aliquet bibendum enim facilisis gravida. A condimentum vitae sapien pellentesque habitant morbi tristique. Morbi tincidunt ornare massa eget egestas purus. Integer quis auctor elit sed vulputate mi sit. Enim tortor at auctor urna nunc id cursus. Pellentesque massa placerat duis ultricies lacus. Sem fringilla ut morbi tincidunt augue. Metus dictum at tempor commodo ullamcorper a.</p>
-
-      <p>Purus semper eget duis at tellus at urna condimentum. Quis imperdiet massa tincidunt nunc pulvinar sapien et ligula ullamcorper. Enim nulla aliquet porttitor lacus luctus accumsan tortor. In nulla posuere sollicitudin aliquam. Dolor magna eget est lorem ipsum. Ante in nibh mauris cursus mattis molestie a iaculis. Sed vulputate odio ut enim blandit volutpat maecenas. Cras pulvinar mattis nunc sed blandit libero volutpat sed cras. Vitae sapien pellentesque habitant morbi tristique senectus et netus et. Scelerisque purus semper eget duis at tellus at urna. Erat pellentesque adipiscing commodo elit at. Ipsum faucibus vitae aliquet nec ullamcorper sit amet risus nullam. Vel orci porta non pulvinar neque. Luctus accumsan tortor posuere ac ut consequat. Facilisi morbi tempus iaculis urna. Pulvinar sapien et ligula ullamcorper malesuada proin libero nunc consequat. Urna cursus eget nunc scelerisque viverra mauris. Donec pretium vulputate sapien nec. Imperdiet dui accumsan sit amet nulla. Proin fermentum leo vel orci porta non.</p>
-    </article>
+    <div class="wrapper">
+      <div class="landing-article">
+        <div class="landing-article_media">
+          <img src="img/fusion360_logo.png" alt="Using Fusion 360" />
+        </div>
+        <article class="landing-article_excerpt">
+          <h2>Using Fusion 360</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Turpis cursus in hac habitasse platea dictumst quisque. Aliquet bibendum enim facilisis gravida. A condimentum vitae sapien pellentesque habitant morbi tristique. Morbi tincidunt ornare massa eget egestas purus. Integer quis auctor elit sed vulputate mi sit. Enim tortor at auctor urna nunc id cursus. Pellentesque massa placerat duis ultricies lacus. Sem fringilla ut morbi tincidunt augue. Metus dictum at tempor commodo ullamcorper a.</p>
+          <div class="button-wrapper">
+            <a href="#" class="button">
+              Learn More
+            </a>
+          </div>
+        </article>
+      </div>
+    </div>
+    
+    <div class="wrapper dark">
+      <div class="landing-article">
+        <div class="landing-article_media">
+          <img src="img/fusion360_logo.png" alt="Using Fusion 360" />
+        </div>
+        <article class="landing-article_excerpt">
+          <h2>Using Fusion 360</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Turpis cursus in hac habitasse platea dictumst quisque. Aliquet bibendum enim facilisis gravida. A condimentum vitae sapien pellentesque habitant morbi tristique. Morbi tincidunt ornare massa eget egestas purus. Integer quis auctor elit sed vulputate mi sit. Enim tortor at auctor urna nunc id cursus. Pellentesque massa placerat duis ultricies lacus. Sem fringilla ut morbi tincidunt augue. Metus dictum at tempor commodo ullamcorper a.</p>
+          <div class="button-wrapper">
+            <a href="#" class="button light">
+              Learn More
+            </a>
+          </div>
+        </article>
+      </div>
+    </div>
   </section>
   
   <!-- Footer -->
-  <footer id="header"></footer>
+  <footer id="footer">
+    <div class="wrapper">
+      <div class="footer_logo">
+          <span class="nav-goal_logo">PRAIRIE LAND<span>BATTLEBOTS</span></span>
+      </div>
+      <div class="footer_links">
+        
+      </div>
+    </div>
+    <div class="footer_social-media">
+
+    </div>
+  </footer>
 
   <!-- Library Footer Scripts -->
   <script src="js/vendor/modernizr-3.7.1.min.js"></script>
+  <script src="js/vendor/dialog-polyfill.js"></script>
   
   <!-- Local Footer Scripts -->
   <script src="js/main.js"></script>

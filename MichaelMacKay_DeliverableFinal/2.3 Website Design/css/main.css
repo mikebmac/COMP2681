@@ -84,33 +84,34 @@ a {
    Loading Dialog
    ========================================================================== */
 dialog#loader {
-    width: 100%;
-    height: 100%;
-    padding: 0;
-    margin: 0;
-    border-width: 0;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  border-width: 0;
 }
 #gear-container {
-    position: absolute;
-    display: block;
-    top: 50%;
-    left: 50%;
-    width: 50%;
-    height: 50%;
-    max-width: 500px;
-    max-height: 500px;
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    border-width: 0;
-    padding: 0;
+  position: absolute;
+  display: block;
+  top: 50%;
+  left: 50%;
+  width: 50%;
+  height: 50%;
+  max-width: 500px;
+  max-height: 500px;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  border-width: 0;
+  padding: 0;
 }
 #gear-svg {
-  -webkit-animation: rotator 3s linear infinite;
-          animation: rotator 3s linear infinite;
+  -webkit-animation: loader-rotator 3s linear infinite;
+          animation: loader-rotator 3s linear infinite;
 }
 #loader.close {
-  -webkit-animation: puff-out 0.25s linear 1 both;
-          animation: puff-out 0.25s linear 1 both;
+  -webkit-animation: loader-done 0.25s linear 1 both;
+          animation: loader-done 0.25s linear 1 both;
 }
 .no-js #loader {
   display: none;
@@ -120,13 +121,13 @@ dialog#loader {
    ========================================================================== */
 body.loaded header,
 .no-js header {
-  -webkit-animation: 0.25s fade-in linear 1 both;
-          animation: 0.25s fade-in linear 1 both;
+  -webkit-animation: 0.5s fade-in ease-in-out 1 both;
+          animation: 0.5s fade-in ease-in-out 1 both;
   opacity: 1;
 }
 header {
   width: 100%;
-  background: rgb(55,53,52);
+  background: rgb(55, 53, 52);
   opacity: 0;
 }
 header a {
@@ -134,7 +135,41 @@ header a {
   padding: 0 2rem;
 }
 header .header-video {
+  position: relative;
   height: 620px;
+  overflow: hidden;
+}
+.header-video h1 {
+  display: inline-block;
+  font-family: Header;
+  font-size: 10rem;
+  color: rgb(240,231,0);
+  line-height: 1;
+  letter-spacing: -0.1rem;
+  white-space: nowrap;
+  text-transform: uppercase;
+  margin: 0;
+  padding: 4rem;
+}
+.header-video h1 span {
+  display: block;
+  font-family: Header-Accent;
+  font-size: 2.5rem;
+  color: rgb(255, 255, 255);
+  letter-spacing: 0;
+  text-align: center;
+  margin-top: -1.5rem;
+}
+#landing-video {
+  position: absolute;
+  top: 50%; 
+  left: 50%;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -1;
+  opacity: 0.5;
 }
 header .header-goal {
   display: flex;
@@ -144,26 +179,28 @@ header .header-goal {
   padding: 4rem 6rem;
   cursor: default;
 }
-.header-goal h1 {
+.header-goal h2 {
   font-family: Header;
   font-size: 10rem;
   color: rgb(240,231,0);
   line-height: 1;
+  letter-spacing: 1rem;
   white-space: nowrap;
   margin: 0;
+  padding: 4rem 0 4rem 8rem;
 }
 .header-goal span.subtitle {
   display: block;
   font-family: Header-Accent;
   font-size: 2.5rem;
   color: rgb(255, 255, 255);
-  text-align: center;
+  letter-spacing: 0;
   margin-top: -1.5rem;
 }
 .header-goal_motto {
   vertical-align: middle;
 }
-.header-goal summary {
+.header-goal aside {
   font-size: 2.5rem;
   color: rgb(255, 255, 255);
   margin: auto;
@@ -256,7 +293,7 @@ nav.sticky li.nav-goal_logo {
   display: block;
   text-align: center;
 }
-.nav-goal_logo h1 {
+.nav-goal_logo h2 {
   font-family: Header;
   font-size: 5rem;
   color: rgb(240,231,0);
@@ -278,10 +315,67 @@ body.loaded section,
 .no-js section {
   opacity: 1;
 }
-.landing-articles article {
-  height: 100vh;
+body section {
+  opacity: 0;
 }
-
+section.landing-articles .wrapper {
+  background: rgb(250, 249, 248);
+}
+section.landing-articles .wrapper.dark {
+  background: rgb(55, 53, 52);
+}
+.landing-article {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  max-width: 1175px;
+  margin: 0 auto;
+  padding: 5rem 0;
+}
+.landing-article .landing-article_media {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 57%;
+  order: 1;
+}
+.dark .landing-article .landing-article_media {
+  order: 2;
+}
+.landing-article .landing-article_excerpt {
+  display: flex;
+  flex-direction: column;
+  align-items: middle;
+  width: 43%;
+  padding: 1rem 0 4rem 0;
+  order: 2;
+}
+.dark .landing-article .landing-article_excerpt {
+  order: 1;
+}
+.landing-article_excerpt h2 {
+  font-family: Base-Accent;
+  font-size: 4rem;
+  color: rgb(55, 53, 52);
+  padding: 1rem 0;
+  margin: 0;
+}
+.dark .landing-article_excerpt h2 {
+  color: rgb(250, 249, 248);
+}
+.landing-article_excerpt p {
+  font-family: Base;
+  font-size: 2rem;
+  color: rgb(125, 133, 127);
+  padding: 0;
+  margin: 0;
+}
+.dark .landing-article_excerpt p {
+  color: rgb(144, 144, 146);
+}
+.landing-article_excerpt .button-wrapper {
+  padding: 2rem 0;
+}
 /* ==========================================================================
    # Footer
    ========================================================================== */
@@ -292,12 +386,45 @@ body.loaded footer,
 footer {
   width: 100%;
   height: 100px;
-  background: rgb(255, 155, 255);
+  background: rgb(250, 249, 248);
   opacity: 0;
+}
+footer .wrapper {
+  display: flex;
+  flex-direction: row;
+  padding: 2rem 5rem;
+}
+footer .footer_logo {
+  width: 12rem;
+}
+footer .footer_links {
+  
 }
 /* ==========================================================================
    # Universal Interactives
    ========================================================================== */
+.button {
+  display: inline-block;
+  width: auto;
+  padding: 2rem 4rem;
+  font-family: Base-Accent;
+  font-size: 2.5rem;
+  color: rgb(55, 53, 52);
+  text-align: center;
+  cursor: pointer;
+  background-color: rgb(240, 231, 0);
+  transition: all 0.25s ease-in-out;
+}
+.button:hover {
+  background-color: rgb(55, 53, 52);
+  color: rgb(240, 231, 0);
+  box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.5), 0 0.6rem 2rem 0 rgba(0, 0, 0, 0.6);
+}
+.button.light:hover {
+  color: rgb(55, 53, 52);
+  background-color: rgb(250, 249, 248);
+  box-shadow: 0 0.5rem 1rem 0 rgba(240, 231, 0, 0.1), 0 0.6rem 2rem 0 rgba(240, 231, 0, 0.15);
+}
 .swipe-left {
   position: relative;
   display: inline-block;
@@ -339,7 +466,7 @@ footer {
 /* ==========================================================================
    # CSS Animations
    ========================================================================== */
-@-webkit-keyframes rotator {
+@-webkit-keyframes loader-rotator {
   0% {
       -webkit-transform: rotate(0deg);
               transform: rotate(0deg);
@@ -349,7 +476,7 @@ footer {
               transform: rotate(360deg);
   }
 }
-@keyframes rotator {
+@keyframes loader-rotator {
   0% {
       -webkit-transform: rotate(0deg);
               transform: rotate(0deg);
@@ -359,31 +486,7 @@ footer {
               transform: rotate(360deg);
   }
 }
-@-webkit-keyframes slide-in-right {
-  0% {
-    -webkit-transform: translateZ(700px) translateY(300px) translateX(-400px);
-            transform: translateZ(700px) translateY(300px) translateX(-400px);
-    opacity: 0;
-  }
-  100% {
-    -webkit-transform: translateZ(0) translateY(0) translateX(0);
-            transform: translateZ(0) translateY(0) translateX(0);
-    opacity: 1;
-  }
-}
-@keyframes slide-in-right {
-  0% {
-    -webkit-transform: translateZ(700px) translateY(300px) translateX(-400px);
-            transform: translateZ(700px) translateY(300px) translateX(-400px);
-    opacity: 0;
-  }
-  100% {
-    -webkit-transform: translateZ(0) translateY(0) translateX(0);
-            transform: translateZ(0) translateY(0) translateX(0);
-    opacity: 1;
-  }
-}
-@-webkit-keyframes puff-out {
+@-webkit-keyframes loader-done {
   0% {
     -webkit-transform: scale(1);
             transform: scale(1);
@@ -399,7 +502,7 @@ footer {
     opacity: 0;
   }
 }
-@keyframes puff-out {
+@keyframes loader-done {
   0% {
     -webkit-transform: scale(1);
             transform: scale(1);
@@ -478,3 +581,4 @@ footer {
 .clearfix:after {
   clear: both;
 }
+
