@@ -1,0 +1,20 @@
+## Navigating the Website
+The navigation of the website is broken up into two sections:
+	● The main navigation bar near the top of each page.
+	● The footer near the bottom of each page.
+
+## The Main Navigation Bar
+The Main Navigation bar changes from page-to-page based off the current page the user is visiting, this is because the current page is excluded from the navigation bar.
+
+Below is a site map:
+
+index.html ---> events.html
+           |
+           ---> botters.html
+           |
+           ---> contact.html
+           |
+           ---> terms.html
+
+## The Footer
+The footer is a static element that has links Terms of Use, documentation, related websites and update information.
